@@ -1,0 +1,509 @@
+{
+    "LAB8_Correct_Answers": {
+        "PART_1_Trace_Programs": [
+            {
+                "q": 1,
+                "output": "Pass\\nEnd"
+            },
+            {
+                "q": 2,
+                "output": "End"
+            },
+            {
+                "q": 3,
+                "output": "Adult\\nProgram End"
+            },
+            {
+                "q": 4,
+                "output": "A\\nC"
+            },
+            {
+                "q": 5,
+                "output": "A\\nB\\nC"
+            },
+            {
+                "q": 6,
+                "output": "C"
+            },
+            {
+                "q": 7,
+                "output": "A\\nD"
+            },
+            {
+                "q": 8,
+                "output": "A\\nB\\nD"
+            },
+            {
+                "q": 9,
+                "output": "A\\nB\\nC\\nD"
+            },
+            {
+                "q": 10,
+                "output": "Fail\\nDone"
+            },
+            {
+                "q": 11,
+                "output": "Pass\\nDone"
+            },
+            {
+                "q": 12,
+                "output": "Pass\\nDone"
+            },
+            {
+                "q": 13,
+                "output": "Even\\nBye"
+            },
+            {
+                "q": 14,
+                "output": "Odd\\nBye"
+            },
+            {
+                "q": 15,
+                "output": "Even\\nBye"
+            },
+            {
+                "q": 16,
+                "output": "Odd\\nBye"
+            },
+            {
+                "q": 17,
+                "output": "Grade A\\nGoodluck"
+            },
+            {
+                "q": 18,
+                "output": "Grade C\\nGoodluck"
+            },
+            {
+                "q": 19,
+                "output": "Grade F\\nGoodluck"
+            },
+            {
+                "q": 20,
+                "output": "Hot"
+            },
+            {
+                "q": 21,
+                "output": "Cold"
+            },
+            {
+                "q": 22,
+                "output": "Qualified\\nBye"
+            },
+            {
+                "q": 23,
+                "output": "Not Qualified\\nBye"
+            },
+            {
+                "q": 24,
+                "output": "Not Qualified\\nBye"
+            },
+            {
+                "q": 25,
+                "output": "Not Qualified\\nBye"
+            },
+            {
+                "q": 26,
+                "output": "Condition True\\nBye"
+            },
+            {
+                "q": 27,
+                "output": "Condition True\\nBye"
+            },
+            {
+                "q": 28,
+                "output": "Condition False\\nBye"
+            },
+            {
+                "q": 29,
+                "output": "A\\nC"
+            },
+            {
+                "q": 30,
+                "output": "B\\nC"
+            },
+            {
+                "q": 31,
+                "output": "B\\nC"
+            },
+            {
+                "q": 32,
+                "output": "Adult\\nPass\\nBye"
+            },
+            {
+                "q": 33,
+                "output": "Underage\\nBye"
+            },
+            {
+                "q": 34,
+                "output": "Adult\\nFail\\nBye"
+            },
+            {
+                "q": 35,
+                "output": "Positive\\nEven\\nNumber"
+            },
+            {
+                "q": 36,
+                "output": "Positive\\nOdd\\nNumber"
+            },
+            {
+                "q": 37,
+                "output": "Not Positive\\nNumber"
+            },
+            {
+                "q": 38,
+                "output": "Grade A\\nExcellent Attendance\\nFinish"
+            },
+            {
+                "q": 39,
+                "output": "Pass\\nFinish"
+            },
+            {
+                "q": 40,
+                "output": "Fail\\nFinish"
+            },
+            {
+                "q": 41,
+                "output": "Grade A\\nLow Attendance\\nFinish"
+            },
+            {
+                "q": 42,
+                "output": "15\\n20"
+            },
+            {
+                "q": 43,
+                "output": "40\\n35"
+            },
+            {
+                "q": 44,
+                "output": "15\\n20"
+            },
+            {
+                "q": 45,
+                "output": "13"
+            },
+            {
+                "q": 46,
+                "output": "18"
+            },
+            {
+                "q": 47,
+                "output": "13"
+            },
+            {
+                "q": 48,
+                "output": "Result = Pass"
+            },
+            {
+                "q": 49,
+                "output": "Result = Fail"
+            },
+            {
+                "q": 50,
+                "output": "A\\nEnd"
+            },
+            {
+                "q": 51,
+                "output": "B\\nEnd"
+            },
+            {
+                "q": 52,
+                "output": "C\\nEnd"
+            },
+            {
+                "q": 53,
+                "output": "A1\\nEnd"
+            },
+            {
+                "q": 54,
+                "output": "A2\\nEnd"
+            },
+            {
+                "q": 55,
+                "output": "B1\\nEnd"
+            },
+            {
+                "q": 56,
+                "output": "C\\nEnd"
+            },
+            {
+                "q": 57,
+                "output": "C\\nEnd"
+            },
+            {
+                "q": 58,
+                "output": "Tuesday"
+            },
+            {
+                "q": 59,
+                "output": "Other Day"
+            },
+            {
+                "q": 60,
+                "output": "Other Day"
+            },
+            {
+                "q": 61,
+                "output": "Delete\\nEnd"
+            },
+            {
+                "q": 62,
+                "output": "Invalid\\nEnd"
+            },
+            {
+                "q": 63,
+                "output": "One"
+            },
+            {
+                "q": 64,
+                "output": "Two\\nThree\\nFour"
+            },
+            {
+                "q": 65,
+                "output": "Three\\nFour"
+            },
+            {
+                "q": 66,
+                "output": "Other"
+            }
+        ],
+        "PART_2_Fill_In_Blanks": [
+            {
+                "q": 1,
+                "blanks": [
+                    "score >= 50",
+                    "\"Pass\""
+                ]
+            },
+            {
+                "q": 2,
+                "blanks": [
+                    "age >= 18",
+                    "\"Adult\""
+                ]
+            },
+            {
+                "q": 3,
+                "blanks": [
+                    "number > 10",
+                    "\"Greater than 10\""
+                ]
+            },
+            {
+                "q": 4,
+                "blanks": [
+                    "number % 2 == 0",
+                    "\"Even\"",
+                    "\"Odd\""
+                ]
+            },
+            {
+                "q": 5,
+                "blanks": [
+                    "score >= 60",
+                    "\"Fail\""
+                ]
+            },
+            {
+                "q": 6,
+                "blanks": [
+                    "age >= 18 (โจทย์พิมพ์ผิดเป็น score)",
+                    "\"Can Vote\"",
+                    "\"Cannot Vote\""
+                ]
+            },
+            {
+                "q": 7,
+                "blanks": [
+                    "x > y",
+                    "\"y is greater\""
+                ]
+            },
+            {
+                "q": 8,
+                "blanks": [
+                    "number > 0",
+                    "\"Negative\""
+                ]
+            },
+            {
+                "q": 9,
+                "blanks": [
+                    "score >= 80",
+                    "score >= 70",
+                    "score >= 60",
+                    "score >= 50"
+                ]
+            },
+            {
+                "q": 10,
+                "blanks": [
+                    "score >= 70",
+                    "score >= 60"
+                ]
+            },
+            {
+                "q": 11,
+                "blanks": [
+                    "age >= 18 && score >= 50"
+                ]
+            },
+            {
+                "q": 12,
+                "blanks": [
+                    "price >= 1000"
+                ]
+            },
+            {
+                "q": 13,
+                "blanks": [
+                    "score >= 50 && score <= 100"
+                ]
+            },
+            {
+                "q": 14,
+                "blanks": [
+                    "age >= 18",
+                    "score >= 50"
+                ]
+            },
+            {
+                "q": 15,
+                "blanks": [
+                    "member == true",
+                    "price >= 1000"
+                ]
+            },
+            {
+                "q": 16,
+                "blanks": [
+                    "menu",
+                    "\"Edit\""
+                ]
+            },
+            {
+                "q": 17,
+                "blanks": [
+                    "day",
+                    "\"Friday\""
+                ]
+            },
+            {
+                "q": 18,
+                "blanks": [
+                    "price >= 5000",
+                    "price >= 3000"
+                ]
+            },
+            {
+                "q": 19,
+                "blanks": [
+                    "score >= 80 && attendance >= 80",
+                    "attendance >= 80",
+                    "score >= 50"
+                ]
+            },
+            {
+                "q": 20,
+                "blanks": [
+                    "price >= 5000",
+                    "price * 0.20",
+                    "price >= 3000",
+                    "price * 0.10",
+                    "0",
+                    "price - discount"
+                ]
+            },
+            {
+                "q": 21,
+                "blanks": [
+                    "order >= 1000",
+                    "order >= 500",
+                    "order + shipping"
+                ]
+            },
+            {
+                "q": 22,
+                "blanks": [
+                    "age >= 18 && score >= 50 && gpa >= 2.00"
+                ]
+            },
+            {
+                "q": 23,
+                "blanks": [
+                    "(gpa >= 3.50 && income < 20000) || gpa >= 3.80"
+                ]
+            },
+            {
+                "q": 24,
+                "blanks": [
+                    "hasCard",
+                    "lateMinute > 30"
+                ]
+            },
+            {
+                "q": 25,
+                "blanks": [
+                    "withdraw > 0",
+                    "withdraw <= balance",
+                    "balance - withdraw"
+                ]
+            },
+            {
+                "q": 26,
+                "blanks": [
+                    "score >= 80",
+                    "attendance >= 80",
+                    "score >= 70",
+                    "score >= 60"
+                ]
+            },
+            {
+                "q": 27,
+                "blanks": [
+                    "member == true",
+                    "price >= 3000",
+                    "price >= 3000",
+                    "price * discount",
+                    "price - (price * discount)"
+                ]
+            },
+            {
+                "q": 28,
+                "blanks": [
+                    "midterm + finalExam + assignment",
+                    "total >= 80",
+                    "total >= 70",
+                    "total >= 60",
+                    "total >= 50"
+                ]
+            },
+            {
+                "q": 29,
+                "blanks": [
+                    "hour <= 1",
+                    "hour <= 4",
+                    "20 + (hour - 1) * 10",
+                    "20 + 3 * 10 + (hour - 4) * 20"
+                ]
+            },
+            {
+                "q": 30,
+                "blanks": [
+                    "memberType.equals(\"Gold\")",
+                    "0.20",
+                    "memberType.equals(\"Silver\")",
+                    "0.10",
+                    "memberType.equals(\"Member\")",
+                    "0.05",
+                    "0",
+                    "price >= 5000",
+                    "discountRate + 0.05",
+                    "discountRate > 0.25",
+                    "0.25",
+                    "price * discountRate",
+                    "price - (price * discountRate)"
+                ]
+            }
+        ]
+    }
+}
