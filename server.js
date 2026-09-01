@@ -57,58 +57,7 @@ app.post('/api/grade', upload.single('document'), async (req, res) => {
         // Clean up the uploaded file
         fs.unlinkSync(filePath);
 
-        // --- DEMO MOCK FOR LAB8.pdf ---
-        if (req.file.originalname.includes('LAB8')) {
-            return res.json({
-                "score": "89/96",
-                "summary": "นักศึกษาทำแบบฝึกหัดได้ดีมากในภาพรวม แต่ยังมีความเข้าใจคลาดเคลื่อนเล็กน้อยเกี่ยวกับการเขียนเงื่อนไข (Condition) ในบางข้อ",
-                "mistakes": [
-                    {
-                        "question": "ส่วนแรก ข้อ 7",
-                        "student_answer": "score > 50",
-                        "correct_answer": "score >= 50",
-                        "explanation": "เงื่อนไขไม่ตรงตามโจทย์ที่กำหนดให้ใช้มากกว่าหรือเท่ากับ"
-                    },
-                    {
-                        "question": "ส่วนแรก ข้อ 45",
-                        "student_answer": "age >= 18",
-                        "correct_answer": "age > 18",
-                        "explanation": "โจทย์ระบุว่าต้องอายุเกิน 18 ปี ไม่รวม 18 พอดี"
-                    },
-                    {
-                        "question": "ส่วนแรก ข้อ 64",
-                        "student_answer": "if (x = 10)",
-                        "correct_answer": "if (x == 10)",
-                        "explanation": "ใช้เครื่องหมาย = (กำหนดค่า) แทนที่จะเป็น == (เปรียบเทียบ)"
-                    },
-                    {
-                        "question": "ส่วนแรก ข้อ 65",
-                        "student_answer": "while(true)",
-                        "correct_answer": "while(condition)",
-                        "explanation": "ทำให้เกิด Infinite Loop โดยไม่ได้ตั้งใจ"
-                    },
-                    {
-                        "question": "ส่วนที่ 2 ข้อ 3",
-                        "student_answer": "System.out.print(\"Hello\");",
-                        "correct_answer": "System.out.println(\"Hello\");",
-                        "explanation": "โจทย์ต้องการให้ขึ้นบรรทัดใหม่หลังแสดงผล"
-                    },
-                    {
-                        "question": "ส่วนที่ 2 ข้อ 6",
-                        "student_answer": "int[] arr = new int[5]; arr[5] = 10;",
-                        "correct_answer": "arr[4] = 10;",
-                        "explanation": "อ้างอิง Array Index Out of Bounds (Index สูงสุดคือ 4)"
-                    },
-                    {
-                        "question": "ส่วนที่ 2 ข้อ 22",
-                        "student_answer": "public void Main(String[] args)",
-                        "correct_answer": "public static void main(String[] args)",
-                        "explanation": "Method main ต้องเป็น static และ m ตัวเล็กเสมอ"
-                    }
-                ]
-            });
-        }
-        // ------------------------------
+
 
         // 2. Build Prompt
         let systemPrompt = `You are an expert, highly accurate grading assistant.
@@ -122,6 +71,7 @@ The JSON object must have the following structure:
 {
   "score": "The total score as a fraction, e.g., '8/10' or '80/100'",
   "summary": "A brief summary of the student's performance, strengths, and areas for improvement (in Thai)",
+  "wrong_summary": "A short text summarizing which questions were wrong, grouped by section. Format strictly as 'ตอนที่ 1\\nข้อ 5,8\\nตอนที่ 2\\nข้อ 3,5,7' (use \\n for newlines)",
   "mistakes": [
     {
       "question": "The original question or topic",
@@ -132,7 +82,8 @@ The JSON object must have the following structure:
   ]
 }
 If there are no mistakes, the "mistakes" array should be empty [].
-Please respond in Thai language for the summary and explanation fields.`;
+Please respond in Thai language for the summary and explanation fields.
+Make sure to properly escape any double quotes inside the string values.`;
 
         const userPrompt = `Here is the student's document content to grade:\n\n${documentText}`;
 
@@ -143,6 +94,7 @@ Please respond in Thai language for the summary and explanation fields.`;
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userPrompt }
             ],
+            format: "json",
             stream: false,
             options: {
                 temperature: 0.0, // Set to 0 for maximum consistency

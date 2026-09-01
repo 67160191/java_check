@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         handleFiles(files);
     });
 
-    fileInput.addEventListener('change', function() {
+    fileInput.addEventListener('change', function () {
         handleFiles(this.files);
     });
 
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (files.length > 0) {
             const file = files[0];
             const validTypes = [
-                'application/pdf', 
+                'application/pdf',
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                 'application/msword'
             ];
-            
+
             if (validTypes.includes(file.type) || file.name.endsWith('.pdf') || file.name.endsWith('.docx')) {
                 currentFile = file;
                 fileNameText.textContent = file.name;
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const result = await response.json();
             displayResult(result);
-            
+
         } catch (error) {
             alert(`ข้อผิดพลาด: ${error.message}`);
         } finally {
@@ -121,6 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Clear previous mistakes
         mistakesContainer.innerHTML = '';
+        
+        const wrongSummaryContainer = document.getElementById('wrong-summary-container');
+        const wrongSummaryText = document.getElementById('wrong-summary-text');
 
         if (!result.mistakes || result.mistakes.length === 0) {
             const perfectEl = document.createElement('div');
@@ -128,13 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
             perfectEl.innerHTML = '<h3>🎉 ยอดเยี่ยม! ไม่พบข้อผิดพลาดในงานนี้</h3>';
             mistakesContainer.appendChild(perfectEl);
             document.getElementById('mistakes-header').style.display = 'none';
+            wrongSummaryContainer.classList.add('hidden');
         } else {
             document.getElementById('mistakes-header').style.display = 'block';
             result.mistakes.forEach((mistake, index) => {
                 const card = document.createElement('div');
                 card.className = 'mistake-card fade-in';
                 card.style.animationDelay = `${index * 0.15}s`;
-                
+
                 card.innerHTML = `
                     <div class="mistake-header">
                         <span class="question-badge">ข้อที่ ${index + 1}</span>
@@ -162,11 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 mistakesContainer.appendChild(card);
             });
+            
+            if (result.wrong_summary) {
+                wrongSummaryText.textContent = result.wrong_summary;
+                wrongSummaryContainer.classList.remove('hidden');
+            } else {
+                wrongSummaryContainer.classList.add('hidden');
+            }
         }
 
         // Show result section
         resultSection.classList.remove('hidden');
-        
+
         // Scroll to result
         setTimeout(() => {
             resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
