@@ -21,7 +21,7 @@ const upload = multer({ dest: 'uploads/' });
 // API Constants
 const BASE_URL = 'http://10.80.39.41:11941';
 const QWEN_API_URL = `${BASE_URL}/api/chat`;
-const MODEL_NAME = 'qwen3.6:35b';
+const MODEL_NAME = 'qwen3.6:27b';
 
 // Helper function to extract text from file
 async function extractTextFromFile(filePath, mimeType) {
