@@ -19,7 +19,7 @@ app.use(express.static('public'));
 const upload = multer({ dest: 'uploads/' });
 
 // API Constants
-const BASE_URL = 'http://10.80.39.42:11434';
+const BASE_URL = 'http://10.80.39.41:11941';
 const QWEN_API_URL = `${BASE_URL}/api/chat`;
 const MODEL_NAME = 'qwen3.6:35b';
 
@@ -53,7 +53,7 @@ app.post('/api/grade', upload.single('document'), async (req, res) => {
 
         // 1. Extract text
         const documentText = await extractTextFromFile(filePath, mimeType);
-        
+
         // Clean up the uploaded file
         fs.unlinkSync(filePath);
 
@@ -145,13 +145,14 @@ Please respond in Thai language for the summary and explanation fields.`;
             ],
             stream: false,
             options: {
-                temperature: 0.2 // Low temperature for high accuracy
+                temperature: 0.0, // Set to 0 for maximum consistency
+                seed: 42 // Fixed seed to ensure deterministic output
             }
         });
 
         // 4. Parse response
         let aiResponse = response.data.message.content;
-        
+
         // Sometimes the AI might still wrap the JSON in markdown code blocks like ```json ... ```
         // Let's clean it up before parsing
         aiResponse = aiResponse.replace(/```json/g, '').replace(/```/g, '').trim();
@@ -162,7 +163,7 @@ Please respond in Thai language for the summary and explanation fields.`;
 
     } catch (error) {
         console.error('Error grading document:', error.message);
-        res.status(500).json({ 
+        res.status(500).json({
             error: 'Failed to grade document. Please try again.',
             details: error.message
         });
@@ -170,7 +171,7 @@ Please respond in Thai language for the summary and explanation fields.`;
 });
 
 // Create uploads directory if it doesn't exist
-if (!fs.existsSync('uploads')){
+if (!fs.existsSync('uploads')) {
     fs.mkdirSync('uploads');
 }
 
