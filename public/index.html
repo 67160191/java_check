@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoGrader AI | ระบบตรวจงานอัจฉริยะ</title>
+    <meta name="description" content="ระบบตรวจงานนักเรียนอัตโนมัติด้วย AI ที่มีความแม่นยำสูง">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="logo">Java Lab Auto-Grader <span class="model-badge">🧠 qwen3.6:35b</span></h1>
+            <p class="subtitle">อัปโหลดไฟล์คำตอบ (PDF/DOCX) เพื่อตรวจคะแนนและรับคำแนะนำจาก AI</p>
+        </header>
+
+        <section class="upload-section glass-panel">
+            <div class="drag-drop-area" id="drop-area">
+                <div class="icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>ลากไฟล์มาวางที่นี่ หรือ <span class="text-blue">คลิกเพื่อเลือกไฟล์</span></h3>
+                <p>รองรับไฟล์ .pdf และ .docx เท่านั้น</p>
+                <input type="file" id="file-input" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+            <div id="file-name-display" class="file-name-display hidden">
+                <span id="file-name"></span>
+                <button id="remove-file-btn" class="icon-btn">✕</button>
+            </div>
+
+            <button id="submit-btn" class="primary-btn" disabled>
+                <span>ตรวจกระดาษคำตอบ</span>
+                <div class="spinner hidden" id="spinner"></div>
+            </button>
+        </section>
+
+        <section id="result-section" class="result-section hidden">
+            <div class="score-card fade-in">
+                <span class="score-label">คะแนนที่ได้</span>
+                <div class="score-value" id="score-value">- / -</div>
+            </div>
+
+            <h3 id="mistakes-header" class="mistakes-header hidden">รายละเอียดข้อที่ผิด ❌</h3>
+            <div class="mistakes-container" id="mistakes-container">
+                <!-- Mistakes will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
